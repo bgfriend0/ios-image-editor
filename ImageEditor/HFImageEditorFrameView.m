@@ -49,7 +49,8 @@
         _cropRect = CGRectOffset(cropRect, self.frame.origin.x, self.frame.origin.y);
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.f);
         CGContextRef context = UIGraphicsGetCurrentContext();
-        [[UIColor blackColor] setFill];
+        [[UIColor colorWithWhite:1.0f
+                           alpha:0.9f] setFill];
         UIRectFill(self.bounds);
         CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor);
         CGContextStrokeRect(context, cropRect);
